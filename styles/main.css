@@ -1,0 +1,363 @@
+/* Exercise 3a:
+   The user list and details sections are laid out in a split-panel pattern.
+   This is unfeasible for small screens (try resizing the window width).
+   Determine how to make this more accessible to small screens.  Would love to
+   see a small-screen-first (mobile-first) approach. */
+
+/* Exercise 3b:
+   The CSS below is hardly optimized, chock full of patterns that could be
+   extracted.  Discover ways to optimize.  If you are decent in Sass, consider
+   using approaches that would not require any HTML changes. */
+
+/*
+  TOC/Structure:
+  - ##Basic Styles;
+  - ##Layout
+  - ##Generated (no changes needed)
+
+/** ##Basic **/
+body {
+  font-family: sans-serif;
+}
+
+h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+/** ##Layout **/
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#app {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.app .app__header,
+.app--ready .app__header {
+  background-color: #1F293A;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: .3em 2em;
+}
+.app .app__title,
+.app--ready .app__title {
+  font-size: 2.3em;
+}
+.app .app__content,
+.app--ready .app__content {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+.collection {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-height: 1px;
+  overflow: auto;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  overflow: hidden;
+}
+.collection .collection__list {
+  display: block;
+  min-width: 15em;
+  overflow: auto;
+  border-right: 1px solid #ccc;
+}
+.collection .collection__detail {
+  padding: 1em;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  overflow: auto;
+}
+.collection .collection__back {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #47BA04;
+  color: white;
+  font-size: 100%;
+  border: none;
+  margin-bottom: 1em;
+  width: 100%;
+  padding: 1.5em;
+  display: none;
+}
+
+.user__list .user__name {
+  color: black;
+  text-decoration: none;
+}
+.user__list .user__link {
+  color: inherit;
+  text-decoration: inherit;
+}
+.user__list .user__role,
+.user__list .user__email {
+  font-size: .75em;
+  display: inline-block;
+  color: #999;
+}
+
+.page__user-index {
+  border-right: 1px solid gray;
+}
+
+.collection__detail .user__name {
+  font-size: 3em;
+}
+.collection__detail .user__avatar {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+.collection__detail .user__info {
+  margin-top: 1em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.collection__detail .user__info > * {
+  margin-right: 1em;
+}
+.collection__detail .user__section {
+  margin-top: 1em;
+}
+.collection__detail .user__section:first-child {
+  margin-top: 0;
+}
+
+.user__details-list > * {
+  margin: .25em 0;
+}
+
+/****** DON'T WORRY ABOUT ANY CODE BELOW ********/
+/** ##Generated **/
+/** schedule colors: don't worry about any optimization here **/
+[data-color] {
+  border-bottom: 1px solid #ccc;
+  border-left: 16px solid #999;
+  padding: .5em 1em;
+}
+
+[data-color="blue"] {
+  border-left-color: blue;
+}
+
+[data-color="blue-violet"] {
+  border-left-color: blueviolet;
+}
+
+[data-color="brown"] {
+  border-left-color: brown;
+}
+
+[data-color="cayenne"] {
+  border-left-color: cayenne;
+}
+
+[data-color="chocolate"] {
+  border-left-color: chocolate;
+}
+
+[data-color="crimson"] {
+  border-left-color: crimson;
+}
+
+[data-color="dark-cyan"] {
+  border-left-color: darkcyan;
+}
+
+[data-color="dark-goldenrod"] {
+  border-left-color: darkgoldenrod;
+}
+
+[data-color="dark-green"] {
+  border-left-color: darkgreen;
+}
+
+[data-color="dark-magenta"] {
+  border-left-color: darkmagenta;
+}
+
+[data-color="dark-olive-green"] {
+  border-left-color: darkolivegreen;
+}
+
+[data-color="dark-orange"] {
+  border-left-color: darkorange;
+}
+
+[data-color="dark-orchid"] {
+  border-left-color: darkorchid;
+}
+
+[data-color="dark-red"] {
+  border-left-color: darkred;
+}
+
+[data-color="dark-slate-blue"] {
+  border-left-color: darkslateblue;
+}
+
+[data-color="dark-slate-gray"] {
+  border-left-color: darkslategray;
+}
+
+[data-color="dark-slate-grey"] {
+  border-left-color: darkslategrey;
+}
+
+[data-color="darkolive-green"] {
+  border-left-color: darkolivegreen;
+}
+
+[data-color="deep-pink"] {
+  border-left-color: deeppink;
+}
+
+[data-color="firebrick"] {
+  border-left-color: firebrick;
+}
+
+[data-color="forest-green"] {
+  border-left-color: forestgreen;
+}
+
+[data-color="green"] {
+  border-left-color: green;
+}
+
+[data-color="grey20"] {
+  border-left-color: grey20;
+}
+
+[data-color="indigo"] {
+  border-left-color: indigo;
+}
+
+[data-color="lime"] {
+  border-left-color: lime;
+}
+
+[data-color="lime-green"] {
+  border-left-color: limegreen;
+}
+
+[data-color="maroon"] {
+  border-left-color: maroon;
+}
+
+[data-color="medium-violet-red"] {
+  border-left-color: mediumvioletred;
+}
+
+[data-color="midnight-blue"] {
+  border-left-color: midnightblue;
+}
+
+[data-color="olivedrab"] {
+  border-left-color: olivedrab;
+}
+
+[data-color="orange"] {
+  border-left-color: orange;
+}
+
+[data-color="orange-red"] {
+  border-left-color: orangered;
+}
+
+[data-color="purple"] {
+  border-left-color: purple;
+}
+
+[data-color="red"] {
+  border-left-color: red;
+}
+
+[data-color="royal-blue"] {
+  border-left-color: royalblue;
+}
+
+[data-color="saddle-brown"] {
+  border-left-color: saddlebrown;
+}
+
+[data-color="sea-green"] {
+  border-left-color: seagreen;
+}
+
+[data-color="slate-blue"] {
+  border-left-color: slateblue;
+}
+
+[data-color="steel-blue"] {
+  border-left-color: steelblue;
+}
+
+[data-color="teal"] {
+  border-left-color: teal;
+}
+
+[data-color="turquoise"] {
+  border-left-color: turquoise;
+}
+
+/** a few stragglers **/
+[data-color="cayenne"] {
+  border-left-color: #BB3E18;
+}
+
+[data-color="grey20"] {
+  border-left-color: #333;
+}

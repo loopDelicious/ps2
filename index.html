@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Front-End Challenge</title>
+
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/main.css">
+
+  <!-- These scripts are just here for assistance if needed.  They are not required. -->
+  <!-- Add more if you need/want. -->
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/pdjs.js"></script>
+  <script src="scripts/handlebars.js"></script>
+
+  <!-- The main script that will handle with this page -->
+
+  <script src="scripts/main.js"></script>
+</head>
+<body>
+<div id="app" class="app--ready">
+  <header class="app__header">
+    <h2 class="app__title">Users</h2>
+    <img class="app__logo" src="https://d15pqkbmbgi02z.cloudfront.net/assets/logos/logo-18e1cba552ff56d2ab5945cf43a2279b.svg" height="64">
+  </header>
+  <div class="app__content">
+    <div class="collection">
+      <!-- Preface: It helps us to know what you're thinking as you work,
+                    so when you can, be vocal with your thoughts/processes/ideas. -->
+      <!-- Exercise 1: Present a list of users (50 or so) from the API.
+                       Paging is not required -->
+      <!-- Exercise 2: After this exercise, see below at #page__user-show -->
+
+
+      <aside id="page__user-index" class="collection__list">
+        <ul class="user__list" id="user__list">
+          <!-- replace content with the list of users from the API -->
+          <script id="entry-template" type="text/x-handlebars-template">
+            {{#each users}}
+            <li class="user" id="user--{{id}}" data-id={{id}} data-color={{color}}>
+              <a class="user__link" href={{user_url}}>
+                <p class="user__name">{{name}}</p>
+                <p class="user__role">{{role}}</p>
+                <p class="user__email">{{email}}</p>
+              </a>
+            </li>
+            {{/each}}
+          </script>
+          <!--<li class="user" id="user&#45;&#45;PZ7JFQ7" data-id="PZ7JFQ7" data-color="dark-goldenrod">-->
+          <!--<a class="user__link" href="/users/PZ7JFQ7">-->
+          <!--<p class="user__name">Alejandro Sandoval</p>-->
+          <!--<p class="user__role">admin</p>-->
+          <!--<p class="user__email">alejandro@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;PGJ36Z3" data-id="PGJ36Z3" data-color="darkolive-green">-->
+          <!--<a class="user__link" href="/users/PGJ36Z3">-->
+          <!--<p class="user__name">Alex Cunningham</p>-->
+          <!--<p class="user__role">admin</p>-->
+          <!--<p class="user__email">acunningham@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;P1RQ0Z6" data-id="P1RQ0Z6" data-color="teal">-->
+          <!--<a class="user__link" href="/users/P1RQ0Z6">-->
+          <!--<p class="user__name">Alex Weinstein</p>-->
+          <!--<p class="user__role">admin</p>-->
+          <!--<p class="user__email">aweinstein@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;PO41K18" data-id="PO41K18" data-color="crimson">-->
+          <!--<a class="user__link" href="/users/PO41K18">-->
+          <!--<p class="user__name">Alexa Guerra</p>-->
+          <!--<p class="user__role">admin</p>-->
+          <!--<p class="user__email">alexa@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;PN4UWE0" data-id="PN4UWE0" data-color="crimson">-->
+          <!--<a class="user__link" href="/users/PN4UWE0">-->
+          <!--<p class="user__name">Alexis</p>-->
+          <!--<p class="user__role">admin</p>-->
+          <!--<p class="user__email">alexis+demo@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;PK2GHUN" data-id="PK2GHUN" data-color="dark-red">-->
+          <!--<a class="user__link" href="/users/PK2GHUN">-->
+          <!--<p class="user__name">Allison Bornstein</p>-->
+          <!--<p class="user__role">admin</p>-->
+          <!--<p class="user__email">allison@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;PIKYBF9" data-id="PIKYBF9" data-color="dark-orchid">-->
+          <!--<a class="user__link" href="/users/PIKYBF9">-->
+          <!--<p class="user__name">Amanda Folson</p>-->
+          <!--<p class="user__role">admin</p>-->
+          <!--<p class="user__email">amanda@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;P7QCNF1" data-id="P7QCNF1" data-color="turquoise">-->
+          <!--<a class="user__link" href="/users/P7QCNF1">-->
+          <!--<p class="user__name">Amy C</p>-->
+          <!--<p class="user__role">admin</p>-->
+          <!--<p class="user__email">amy@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;P79LCJF" data-id="P79LCJF" data-color="orange-red">-->
+          <!--<a class="user__link" href="/users/P79LCJF">-->
+          <!--<p class="user__name">Andrew Bakhtiari</p>-->
+          <!--<p class="user__role">admin</p>-->
+          <!--<p class="user__email">abakhtiari@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;PX6RN71" data-id="PX6RN71" data-color="slate-blue">-->
+          <!--<a class="user__link" href="/users/PX6RN71">-->
+          <!--<p class="user__name">Angela Chapman</p>-->
+          <!--<p class="user__role">admin</p>-->
+          <!--<p class="user__email">angela@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;P1WSC9B" data-id="P1WSC9B" data-color="teal">-->
+          <!--<a class="user__link" href="/users/P1WSC9B">-->
+          <!--<p class="user__name">Antonia H</p>-->
+          <!--<p class="user__role">user</p>-->
+          <!--<p class="user__email">antonia.hidalgo@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;PSL1X6P" data-id="PSL1X6P" data-color="orange">-->
+          <!--<a class="user__link" href="/users/PSL1X6P">-->
+          <!--<p class="user__name">Anyone</p>-->
+          <!--<p class="user__role">user</p>-->
+          <!--<p class="user__email">anyone@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;P4HPQA0" data-id="P4HPQA0" data-color="saddle-brown">-->
+          <!--<a class="user__link" href="/users/P4HPQA0">-->
+          <!--<p class="user__name">Ashley</p>-->
+          <!--<p class="user__role">user</p>-->
+          <!--<p class="user__email">ashley@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;PDOIPF7" data-id="PDOIPF7" data-color="saddle-brown">-->
+          <!--<a class="user__link" href="/users/PDOIPF7">-->
+          <!--<p class="user__name">Avinash Rao</p>-->
+          <!--<p class="user__role">admin</p>-->
+          <!--<p class="user__email">avinash@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;PRMXSSO" data-id="PRMXSSO" data-color="cayenne">-->
+          <!--<a class="user__link" href="/users/PRMXSSO">-->
+          <!--<p class="user__name">Benedict Cumberbatch</p>-->
+          <!--<p class="user__role">user</p>-->
+          <!--<p class="user__email">benedict@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;PD1MMUA" data-id="PD1MMUA" data-color="orange">-->
+          <!--<a class="user__link" href="/users/PD1MMUA">-->
+          <!--<p class="user__name">Billy Tamplin</p>-->
+          <!--<p class="user__role">admin</p>-->
+          <!--<p class="user__email">billy@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;PQ8MK00" data-id="PQ8MK00" data-color="purple">-->
+          <!--<a class="user__link" href="/users/PQ8MK00">-->
+          <!--<p class="user__name">Blake McMillan</p>-->
+          <!--<p class="user__role">admin</p>-->
+          <!--<p class="user__email">blake@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;PCYOR4Q" data-id="PCYOR4Q" data-color="sea-green">-->
+          <!--<a class="user__link" href="/users/PCYOR4Q">-->
+          <!--<p class="user__name">Bob</p>-->
+          <!--<p class="user__role">user</p>-->
+          <!--<p class="user__email">bob@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;P4P5I9U" data-id="P4P5I9U" data-color="turquoise">-->
+          <!--<a class="user__link" href="/users/P4P5I9U">-->
+          <!--<p class="user__name">Bob Fahey</p>-->
+          <!--<p class="user__role">admin</p>-->
+          <!--<p class="user__email">robert@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;PIIGE3P" data-id="PIIGE3P" data-color="turquoise">-->
+          <!--<a class="user__link" href="/users/PIIGE3P">-->
+          <!--<p class="user__name">Brett Skale</p>-->
+          <!--<p class="user__role">admin</p>-->
+          <!--<p class="user__email">brett@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;PUVM8GB" data-id="PUVM8GB" data-color="orange">-->
+          <!--<a class="user__link" href="/users/PUVM8GB">-->
+          <!--<p class="user__name">Brian Choi-Dea</p>-->
+          <!--<p class="user__role">admin</p>-->
+          <!--<p class="user__email">bchoidea@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;PFMFH4L" data-id="PFMFH4L" data-color="dark-slate-blue">-->
+          <!--<a class="user__link" href="/users/PFMFH4L">-->
+          <!--<p class="user__name">Cameron Jung</p>-->
+          <!--<p class="user__role">admin</p>-->
+          <!--<p class="user__email">cameron@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;PDLNOLF" data-id="PDLNOLF" data-color="dark-green">-->
+          <!--<a class="user__link" href="/users/PDLNOLF">-->
+          <!--<p class="user__name">Celine Ho</p>-->
+          <!--<p class="user__role">admin</p>-->
+          <!--<p class="user__email">celine@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;PR1HEBW" data-id="PR1HEBW" data-color="chocolate">-->
+          <!--<a class="user__link" href="/users/PR1HEBW">-->
+          <!--<p class="user__name">Chris Gagne</p>-->
+          <!--<p class="user__role">admin</p>-->
+          <!--<p class="user__email">chris@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+          <!--<li class="user" id="user&#45;&#45;PXOTLHW" data-id="PXOTLHW" data-color="purple">-->
+          <!--<a class="user__link" href="/users/PXOTLHW">-->
+          <!--<p class="user__name">Corinna Sherman</p>-->
+          <!--<p class="user__role">admin</p>-->
+          <!--<p class="user__email">corinna@pagerduty.com</p>-->
+          <!--</a>-->
+          <!--</li>-->
+        </ul>
+        <!-- end user list -->
+      </aside>
+
+      <!-- Exercise 2: Selecting a user should render a detail page for
+                       said user (within .user__placeholder). -->
+      <article id="page__user-show" class="collection__detail">
+        <button class="collection__back">Back</button>
+
+        <div class="user__placeholder" id="user__placeholder">
+          <!-- example of what should be rendered here -->
+
+          <script id="display-template" type="text/x-handlebars-template">
+            <div class="user" id="user--{{id}}">
+              <h2 class="user__name">{{name}}</h2>
+
+              <div class="user__info">
+                <img class="user__avatar" src={{avatar_url}} width="320">
+
+                <div class="user__details">
+                  <h3 class="user__section">Details</h3>
+                  <ul class="user__details-list">
+                    <li>Email: {{email}}</li>
+                    <li>Role: {{role}}</li>
+                    <li>Time Zone: {{time_zone}}</li>
+                  </ul>
+
+                  <h3 class="user__section">Contact Methods</h3>
+                  <ul class="user__details-list">
+                    <li>{{email}}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </script>
+          <div class="updates"></div>
+
+          <!--<div class="user" id="user&#45;&#45;P4HPQA0">-->
+          <!--<h2 class="user__name">Ashley</h2>-->
+
+          <!--<div class="user__info">-->
+          <!--<img class="user__avatar" src="https://secure.gravatar.com/avatar/7b1ac42e9c3b05538bcdc9e3ae676687.png?d=mm&amp;r=PG&amp;s=320" width="320">-->
+
+          <!--<div class="user__details">-->
+          <!--<h3 class="user__section">Details</h3>-->
+          <!--<ul class="user__details-list">-->
+          <!--<li>Email: ashley@pagerduty.com</li>-->
+          <!--<li>Role: user</li>-->
+          <!--<li>Time Zone: Pacific Time (US &amp; Canada)</li>-->
+          <!--</ul>-->
+
+          <!--<h3 class="user__section">Contact Methods</h3>-->
+          <!--<ul class="user__details-list">-->
+          <!--<li>ashley@pagerduty.com</li>-->
+          <!--</ul>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!-- end of example -->
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+</body>
+</html>
